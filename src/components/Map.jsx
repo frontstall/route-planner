@@ -14,10 +14,7 @@ class Map extends React.Component {
 
   render() {
     const { className = '' } = this.props;
-    const classes = cn({
-      [className]: true,
-      map: true,
-    });
+    const classes = cn('map', className);
 
     return <div id="map" className={classes} />;
   }

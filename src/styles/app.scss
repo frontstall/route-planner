@@ -1,0 +1,29 @@
+body {
+  padding: 0 10px;
+}
+
+.app {
+  width: 100%;
+  max-width: 1240px;
+  min-width: 780px;
+  margin: 0 auto;
+}
+
+.app__container {
+  display: flex;
+  width: 100%;
+}
+
+.app__header {
+  width: 100%;
+  margin-bottom: 30px;
+}
+
+.app__points {
+  min-width: 250px;
+}
+
+.app__map {
+  flex-grow: 1;
+  min-width: 530px;
+}

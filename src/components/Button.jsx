@@ -1,4 +1,5 @@
 import React from 'react';
+import cn from 'classnames';
 
 class Button extends React.Component {
   onClick = () => {
@@ -17,9 +18,11 @@ class Button extends React.Component {
       disabled = false,
     } = this.props;
 
+    const classes = cn('button', className);
+
     return (
       <button
-        className={className}
+        className={classes}
         type={type}
         onClick={this.onClick}
         disabled={disabled}

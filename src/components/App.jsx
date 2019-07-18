@@ -162,6 +162,7 @@ class App extends React.Component {
                   onClick={this.openNewPointForm}
                   text="Новая точка маршрута"
                   disabled={!mapLoaded}
+                  className={['points__add-point-button', 'button_big']}
                 />
               )}
               {addingNewPoint && (
@@ -179,11 +180,11 @@ class App extends React.Component {
               )}
             </div>
             <Map
-              className="app__map"
               points={points}
               center={center}
               onMapApiInitialScriptLoad={this.onYandexMapInitialScriptLoad}
               mapLoaded={mapLoaded}
+              className="app__map"
             />
           </div>
         </div>
