@@ -35,7 +35,8 @@ class App extends React.Component {
         test4: {
           coordinates: [55.75556, 37.6488],
           id: 'test4',
-          name: 'point four',
+          name:
+            'point four with really long name you cant believe it can be sooo long',
         },
       },
       pointsIds: ['test1', 'test2', 'test3', 'test4'],
@@ -161,10 +162,11 @@ class App extends React.Component {
                 <Button
                   onClick={this.openNewPointForm}
                   text="Новая точка маршрута"
-                  disabled={!mapLoaded}
-                  className={['points__add-point-button', 'button_big']}
+                  disabled={!mapLoaded || addingNewPoint}
+                  className="points__add-point-button button--big"
                 />
               )}
+
               {addingNewPoint && (
                 <Form
                   onSubmit={this.addPoint}
