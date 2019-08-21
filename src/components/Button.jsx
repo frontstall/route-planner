@@ -1,5 +1,6 @@
 import React from 'react';
 import cn from 'classnames';
+import PropTypes from 'prop-types';
 
 class Button extends React.Component {
   onClick = () => {
@@ -16,6 +17,7 @@ class Button extends React.Component {
       type = 'button',
       className = '',
       disabled = false,
+      ...props
     } = this.props;
 
     const classes = cn('button', className);
@@ -26,11 +28,19 @@ class Button extends React.Component {
         type={type}
         onClick={this.onClick}
         disabled={disabled}
+        {...props}
       >
         {text}
       </button>
     );
   }
 }
+
+Button.propTypes = {
+  text: PropTypes.string,
+  type: PropTypes.string,
+  className: PropTypes.string,
+  disabled: PropTypes.bool,
+};
 
 export default Button;

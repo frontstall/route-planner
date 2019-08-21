@@ -1,6 +1,7 @@
 import React from 'react';
 import { YANDEX_MAP_SCRIPT_SRC } from '../tools/const';
 import cn from 'classnames';
+import PropTypes from 'prop-types';
 
 class Map extends React.Component {
   componentDidMount() {
@@ -19,5 +20,10 @@ class Map extends React.Component {
     return <div id="map" className={classes} />;
   }
 }
+
+Map.propTypes = {
+  className: PropTypes.string,
+  onMapApiInitialScriptLoad: PropTypes.func,
+};
 
 export default Map;

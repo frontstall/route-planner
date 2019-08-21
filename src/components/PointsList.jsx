@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Droppable } from 'react-beautiful-dnd';
 
 import Point from './Point';
@@ -14,6 +15,7 @@ class PointsList extends React.Component {
               const { name } = points[id];
               return (
                 <Point
+                  className="points-list__item"
                   name={name}
                   id={id}
                   key={id}
@@ -29,5 +31,11 @@ class PointsList extends React.Component {
     );
   }
 }
+
+PointsList.propTypes = {
+  points: PropTypes.object,
+  pointsIds: PropTypes.array,
+  onPointRemove: PropTypes.func,
+};
 
 export default PointsList;
