@@ -1,0 +1,27 @@
+.point {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  padding: 5px 30px 5px 5px;
+  border: 2px solid $orange;
+
+  &:hover,
+  &:focus,
+  &:active {
+    background-color: $yellow2;
+  }
+}
+
+.point__remove-button {
+  position: absolute;
+  right: 4px;
+  top: 4px;
+}
+
+.point__name {
+  line-height: 19px;
+  white-space: nowrap;
+  overflow-x: hidden;
+  text-overflow: ellipsis;
+}

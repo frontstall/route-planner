@@ -1,8 +1,9 @@
 .button {
-  border: none;
-  background-color: #362d90;
-  color: #ffffff;
-  text-transform: uppercase;
+  border: 2px solid $orange;
+  background-color: $orange;
+  color: white;
+  font-weight: 700;
+  transition: 0.15s ease;
   text-align: center;
   cursor: pointer;
 
@@ -14,12 +15,71 @@
 
   &:hover,
   &:focus {
-    background-color: #362dcc;
+    color: $orange;
+    background-color: transparent;
+    outline: none;
+
+    &:before,
+    &:after {
+      background-color: $orange;
+    }
   }
 
-  &_big {
+  &:active {
+    opacity: 0.7;
+  }
+
+  &--big {
     display: block;
     font-size: 14px;
     padding: 10px 20px;
+  }
+
+  &--iconed-plus {
+    width: 26px;
+    height: 26px;
+
+    &::before,
+    &::after {
+      content: '';
+      display: block;
+      position: absolute;
+      height: 4px;
+      width: 18px;
+      background-color: white;
+      transition: 0.15s ease;
+      top: 11px;
+      left: 4px;
+    }
+
+    &::after {
+      transform: rotate(90deg);
+    }
+  }
+
+  &--iconed-cross {
+    width: 21px;
+    height: 21px;
+
+    &::before,
+    &::after {
+      content: '';
+      display: block;
+      position: absolute;
+      height: 3px;
+      width: 15px;
+      background-color: white;
+      transition: 0.15s ease;
+      top: 7px;
+      left: 1px;
+    }
+
+    &::before {
+      transform: rotate(45deg);
+    }
+
+    &::after {
+      transform: rotate(-45deg);
+    }
   }
 }

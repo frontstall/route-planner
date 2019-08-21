@@ -20,10 +20,16 @@ body {
 }
 
 .app__points {
-  min-width: 250px;
+  width: 300px;
+  margin-right: 10px;
+  height: 600px;
+  overflow: auto;
+  box-sizing: border-box;
 }
 
 .app__map {
   flex-grow: 1;
-  min-width: 530px;
+  min-width: 500px;
+  height: 600px;
+  box-sizing: border-box;
 }

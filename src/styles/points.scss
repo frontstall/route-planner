@@ -1,2 +1,13 @@
+.points {
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  padding: 10px;
+  border: 2px solid $orange;
+  background-color: $yellow;
+}
+
 .points__add-point-button {
+  margin-bottom: 50px;
+  text-transform: uppercase;
 }
