@@ -41,7 +41,7 @@ class App extends React.Component {
       },
       pointsIds: ['test1', 'test2', 'test3', 'test4'],
       addingNewPoint: false,
-      center: DEFAULT_MAP_CENTER, // TODO: тянуть из геолокации
+      center: DEFAULT_MAP_CENTER,
       mapLoaded: false,
       map: null,
     };
@@ -150,7 +150,7 @@ class App extends React.Component {
   };
 
   render() {
-    const { points, addingNewPoint, pointsIds, center, mapLoaded } = this.state;
+    const { points, addingNewPoint, pointsIds, mapLoaded } = this.state;
 
     return (
       <DragDropContext onDragEnd={this.swapListItems}>
@@ -182,10 +182,7 @@ class App extends React.Component {
               )}
             </div>
             <Map
-              points={points}
-              center={center}
               onMapApiInitialScriptLoad={this.onYandexMapInitialScriptLoad}
-              mapLoaded={mapLoaded}
               className="app__map"
             />
           </div>
