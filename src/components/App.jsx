@@ -24,6 +24,7 @@ class App extends React.Component {
       center: DEFAULT_MAP_CENTER,
       mapLoaded: false,
       map: null,
+      error: false,
     };
   }
 
@@ -43,11 +44,45 @@ class App extends React.Component {
   }
 
   openNewPointForm = () => {
-    this.setState(() => ({ addingNewPoint: true }));
+    this.setState(() => ({ addingNewPoint: true, error: false }));
   };
 
   closeNewPointForm = () => {
     this.setState(() => ({ addingNewPoint: false }));
+  };
+
+  updateAddress = async (id, coordinates) => {
+    const mapFacade = this.getMapFacade();
+
+    this.setState(({ points }) => ({
+      points: { ...points, [id]: { ...points[id], loading: true } },
+      error: false,
+    }));
+
+    let address = '';
+
+    try {
+      address = await mapFacade.getAddress(coordinates);
+    } catch (error) {
+      address = 'Мы не смогли ничего найти :(';
+      this.setState(({ points }) => ({
+        points: { ...points, [id]: { ...points[id], loading: true } },
+        error: true,
+      }));
+      console.log(error);
+    }
+
+    const {
+      points: { [id]: point },
+    } = this.state;
+
+    this.setState(({ points }) => {
+      if (points[id]) {
+        return {
+          points: { ...points, [id]: { ...point, address, loading: false } },
+        };
+      }
+    });
   };
 
   addPoint = newPointName => {
@@ -63,6 +98,8 @@ class App extends React.Component {
       },
       pointsIds: [...pointsIds, id],
     }));
+
+    this.updateAddress(id, center);
   };
 
   removePoint = pointId => {
@@ -125,6 +162,8 @@ class App extends React.Component {
         [id]: { ...points[id], coordinates: movedPointCoordinates },
       },
     }));
+
+    this.updateAddress(id, movedPointCoordinates);
   };
 
   shouldRenderPoints = prevState => {
