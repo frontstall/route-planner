@@ -154,6 +154,9 @@ exports[`renders App renders correctly 1`] = `
                       >
                         point one
                       </span>
+                      <span
+                        className="point__address"
+                      />
                       <Button
                         className="point__remove-button button--iconed-cross"
                         onClick={[Function]}
@@ -192,6 +195,9 @@ exports[`renders App renders correctly 1`] = `
                       >
                         point two
                       </span>
+                      <span
+                        className="point__address"
+                      />
                       <Button
                         className="point__remove-button button--iconed-cross"
                         onClick={[Function]}
@@ -230,6 +236,9 @@ exports[`renders App renders correctly 1`] = `
                       >
                         point three
                       </span>
+                      <span
+                        className="point__address"
+                      />
                       <Button
                         className="point__remove-button button--iconed-cross"
                         onClick={[Function]}
@@ -268,6 +277,9 @@ exports[`renders App renders correctly 1`] = `
                       >
                         point four with really long name you cant believe it can be sooo long
                       </span>
+                      <span
+                        className="point__address"
+                      />
                       <Button
                         className="point__remove-button button--iconed-cross"
                         onClick={[Function]}

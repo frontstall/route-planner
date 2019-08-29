@@ -10,6 +10,7 @@ const getMapFacadeMocked = () => ({
   renderRoute: jest.fn(),
   renderPoints: jest.fn(),
   getCenter: jest.fn(),
+  getAddress: jest.fn(),
 });
 
 jest.mock('react-beautiful-dnd', () => ({
