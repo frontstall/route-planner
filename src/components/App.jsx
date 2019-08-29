@@ -15,37 +15,22 @@ import { DEFAULT_MAP_CENTER } from '../tools/const';
 class App extends React.Component {
   constructor(props) {
     super(props);
+
+    const { points, pointsIds } = this.props;
     this.state = {
-      points: {
-        test1: {
-          coordinates: [55.759, 37.64],
-          id: 'test1',
-          name: 'point one',
-        },
-        test2: {
-          coordinates: [55.7621, 37.6429],
-          id: 'test2',
-          name: 'point two',
-        },
-        test3: {
-          coordinates: [55.76029, 37.6482],
-          id: 'test3',
-          name: 'point three',
-        },
-        test4: {
-          coordinates: [55.75556, 37.6488],
-          id: 'test4',
-          name:
-            'point four with really long name you cant believe it can be sooo long',
-        },
-      },
-      pointsIds: ['test1', 'test2', 'test3', 'test4'],
+      points,
+      pointsIds,
       addingNewPoint: false,
       center: DEFAULT_MAP_CENTER,
       mapLoaded: false,
       map: null,
     };
   }
+
+  static defaultProps = {
+    points: {},
+    pointsIds: [],
+  };
 
   componentDidUpdate(prevProps, prevState) {
     if (this.shouldRenderPoints(prevState)) {
