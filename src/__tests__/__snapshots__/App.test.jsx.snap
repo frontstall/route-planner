@@ -56,7 +56,7 @@ exports[`renders App renders correctly 1`] = `
       <header
         className="app__header header"
       >
-        Funbox test app
+        Route planner
       </header>
       <div
         className="app__container"
