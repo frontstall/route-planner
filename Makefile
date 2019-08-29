@@ -5,7 +5,7 @@ develop:
 	npm start
 
 build:
-	rm -rf dist
+	rm -rf build
 	npm run build
 
 test:
