@@ -12,7 +12,7 @@ class Point extends React.Component {
   };
 
   render() {
-    const { name, id, index, className } = this.props;
+    const { name, id, index, className, address, loading } = this.props;
     const classes = cn('point', className);
     return (
       <Draggable draggableId={id} index={index}>
@@ -25,6 +25,12 @@ class Point extends React.Component {
           >
             <span className="point__name" title={name}>
               {name}
+            </span>
+            <span
+              className="point__address"
+              title={loading ? 'Ищем адрес...' : address}
+            >
+              {loading ? 'Ищем адрес...' : address}
             </span>
             <Button
               className="point__remove-button button--iconed-cross"

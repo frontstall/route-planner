@@ -12,15 +12,17 @@ class PointsList extends React.Component {
         {({ droppableProps, placeholder, innerRef }) => (
           <ul className="points-list" {...droppableProps} ref={innerRef}>
             {pointsIds.map((id, index) => {
-              const { name } = points[id];
+              const { name, address, loading } = points[id];
               return (
                 <Point
                   className="points-list__item"
                   name={name}
+                  address={address}
                   id={id}
                   key={id}
                   onRemove={onPointRemove}
                   index={index}
+                  loading={loading}
                 />
               );
             })}

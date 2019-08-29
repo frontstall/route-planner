@@ -1,6 +1,7 @@
 .point {
   position: relative;
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
   margin-bottom: 10px;
   padding: 5px 30px 5px 5px;
@@ -20,7 +21,18 @@
 }
 
 .point__name {
-  line-height: 19px;
+  display: block;
+  line-height: 24px;
+  font-size: 20px;
+  white-space: nowrap;
+  overflow-x: hidden;
+  text-overflow: ellipsis;
+}
+
+.point__address {
+  display: block;
+  line-height: 16px;
+  font-size: 14px;
   white-space: nowrap;
   overflow-x: hidden;
   text-overflow: ellipsis;
