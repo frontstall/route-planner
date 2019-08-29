@@ -140,7 +140,7 @@ class App extends React.Component {
     return (
       <DragDropContext onDragEnd={this.swapListItems}>
         <div className="app">
-          <header className="app__header header">Funbox test app</header>
+          <header className="app__header header">Route planner</header>
           <div className="app__container">
             <div className="app__points points">
               {!addingNewPoint && (

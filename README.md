@@ -1,12 +1,14 @@
 [![Build Status](https://travis-ci.org/frontstall/router-planner.svg?branch=master)](https://travis-ci.org/frontstall/router-planner)
 
-## Router planner
+https://routerplanner.herokuapp.com/
 
-Simple router planner with Yandex Maps. Able to add, move and delete points on
+## Route planner
+
+Simple route planner with Yandex Maps. Able to add, move and delete points on
 map. This project was bootstrapped with
 [Create React App](https://github.com/facebook/create-react-app).
 
-### Run project
+### Run project locally
 
 - copy project to local machine
 - `make install` installs dependencies
