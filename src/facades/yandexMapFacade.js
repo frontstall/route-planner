@@ -11,7 +11,7 @@
 
 export default (map, points, pointsIds, onPointDragEnd) => {
   const {
-    ymaps: { GeoObject },
+    ymaps: { GeoObject, geocode },
   } = window;
 
   const createPoint = (pointData, onDragEnd, iconContent) => {
@@ -84,10 +84,17 @@ export default (map, points, pointsIds, onPointDragEnd) => {
 
   const getCenter = () => map.getCenter();
 
+  const getAddress = async coordinates => {
+    const { geoObjects } = await geocode(coordinates);
+
+    return geoObjects.get(0).properties.get('name');
+  };
+
   return {
     clearMap,
     renderRoute,
     renderPoints,
     getCenter,
+    getAddress,
   };
 };
