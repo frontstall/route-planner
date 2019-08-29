@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/frontstall/router-planner.svg?branch=master)](https://travis-ci.org/frontstall/router-planner)
+
 ## Router planner
 
 Simple router planner with Yandex Maps. Able to add, move and delete points on
