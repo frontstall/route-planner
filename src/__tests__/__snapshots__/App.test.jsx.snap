@@ -1,0 +1,304 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders App renders correctly 1`] = `
+<App
+  points={
+    Object {
+      "test1": Object {
+        "coordinates": Array [
+          55.759,
+          37.64,
+        ],
+        "id": "test1",
+        "name": "point one",
+      },
+      "test2": Object {
+        "coordinates": Array [
+          55.7621,
+          37.6429,
+        ],
+        "id": "test2",
+        "name": "point two",
+      },
+      "test3": Object {
+        "coordinates": Array [
+          55.76029,
+          37.6482,
+        ],
+        "id": "test3",
+        "name": "point three",
+      },
+      "test4": Object {
+        "coordinates": Array [
+          55.75556,
+          37.6488,
+        ],
+        "id": "test4",
+        "name": "point four with really long name you cant believe it can be sooo long",
+      },
+    }
+  }
+  pointsIds={
+    Array [
+      "test1",
+      "test2",
+      "test3",
+      "test4",
+    ]
+  }
+>
+  <DragDropContext
+    onDragEnd={[Function]}
+  >
+    <div
+      className="app"
+    >
+      <header
+        className="app__header header"
+      >
+        Funbox test app
+      </header>
+      <div
+        className="app__container"
+      >
+        <div
+          className="app__points points"
+        >
+          <Button
+            className="points__add-point-button button--big"
+            disabled={true}
+            onClick={[Function]}
+            text="Новая точка маршрута"
+          >
+            <button
+              className="button points__add-point-button button--big"
+              disabled={true}
+              onClick={[Function]}
+              type="button"
+            >
+              Новая точка маршрута
+            </button>
+          </Button>
+          <PointsList
+            onPointRemove={[Function]}
+            points={
+              Object {
+                "test1": Object {
+                  "coordinates": Array [
+                    55.759,
+                    37.64,
+                  ],
+                  "id": "test1",
+                  "name": "point one",
+                },
+                "test2": Object {
+                  "coordinates": Array [
+                    55.7621,
+                    37.6429,
+                  ],
+                  "id": "test2",
+                  "name": "point two",
+                },
+                "test3": Object {
+                  "coordinates": Array [
+                    55.76029,
+                    37.6482,
+                  ],
+                  "id": "test3",
+                  "name": "point three",
+                },
+                "test4": Object {
+                  "coordinates": Array [
+                    55.75556,
+                    37.6488,
+                  ],
+                  "id": "test4",
+                  "name": "point four with really long name you cant believe it can be sooo long",
+                },
+              }
+            }
+            pointsIds={
+              Array [
+                "test1",
+                "test2",
+                "test3",
+                "test4",
+              ]
+            }
+          >
+            <Droppable
+              droppableId="points-list"
+            >
+              <ul
+                className="points-list"
+              >
+                <Point
+                  className="points-list__item"
+                  id="test1"
+                  index={0}
+                  key="test1"
+                  name="point one"
+                  onRemove={[Function]}
+                >
+                  <Draggable
+                    draggableId="test1"
+                    index={0}
+                  >
+                    <li
+                      className="point points-list__item"
+                      style={Object {}}
+                    >
+                      <span
+                        className="point__name"
+                        title="point one"
+                      >
+                        point one
+                      </span>
+                      <Button
+                        className="point__remove-button button--iconed-cross"
+                        onClick={[Function]}
+                        title="Удалить"
+                      >
+                        <button
+                          className="button point__remove-button button--iconed-cross"
+                          disabled={false}
+                          onClick={[Function]}
+                          title="Удалить"
+                          type="button"
+                        />
+                      </Button>
+                    </li>
+                  </Draggable>
+                </Point>
+                <Point
+                  className="points-list__item"
+                  id="test2"
+                  index={1}
+                  key="test2"
+                  name="point two"
+                  onRemove={[Function]}
+                >
+                  <Draggable
+                    draggableId="test2"
+                    index={1}
+                  >
+                    <li
+                      className="point points-list__item"
+                      style={Object {}}
+                    >
+                      <span
+                        className="point__name"
+                        title="point two"
+                      >
+                        point two
+                      </span>
+                      <Button
+                        className="point__remove-button button--iconed-cross"
+                        onClick={[Function]}
+                        title="Удалить"
+                      >
+                        <button
+                          className="button point__remove-button button--iconed-cross"
+                          disabled={false}
+                          onClick={[Function]}
+                          title="Удалить"
+                          type="button"
+                        />
+                      </Button>
+                    </li>
+                  </Draggable>
+                </Point>
+                <Point
+                  className="points-list__item"
+                  id="test3"
+                  index={2}
+                  key="test3"
+                  name="point three"
+                  onRemove={[Function]}
+                >
+                  <Draggable
+                    draggableId="test3"
+                    index={2}
+                  >
+                    <li
+                      className="point points-list__item"
+                      style={Object {}}
+                    >
+                      <span
+                        className="point__name"
+                        title="point three"
+                      >
+                        point three
+                      </span>
+                      <Button
+                        className="point__remove-button button--iconed-cross"
+                        onClick={[Function]}
+                        title="Удалить"
+                      >
+                        <button
+                          className="button point__remove-button button--iconed-cross"
+                          disabled={false}
+                          onClick={[Function]}
+                          title="Удалить"
+                          type="button"
+                        />
+                      </Button>
+                    </li>
+                  </Draggable>
+                </Point>
+                <Point
+                  className="points-list__item"
+                  id="test4"
+                  index={3}
+                  key="test4"
+                  name="point four with really long name you cant believe it can be sooo long"
+                  onRemove={[Function]}
+                >
+                  <Draggable
+                    draggableId="test4"
+                    index={3}
+                  >
+                    <li
+                      className="point points-list__item"
+                      style={Object {}}
+                    >
+                      <span
+                        className="point__name"
+                        title="point four with really long name you cant believe it can be sooo long"
+                      >
+                        point four with really long name you cant believe it can be sooo long
+                      </span>
+                      <Button
+                        className="point__remove-button button--iconed-cross"
+                        onClick={[Function]}
+                        title="Удалить"
+                      >
+                        <button
+                          className="button point__remove-button button--iconed-cross"
+                          disabled={false}
+                          onClick={[Function]}
+                          title="Удалить"
+                          type="button"
+                        />
+                      </Button>
+                    </li>
+                  </Draggable>
+                </Point>
+              </ul>
+            </Droppable>
+          </PointsList>
+        </div>
+        <Map
+          className="app__map"
+          onMapApiInitialScriptLoad={[Function]}
+        >
+          <div
+            className="map app__map"
+            id="map"
+          />
+        </Map>
+      </div>
+    </div>
+  </DragDropContext>
+</App>
+`;
