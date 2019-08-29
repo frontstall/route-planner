@@ -73,14 +73,13 @@ class Form extends React.Component {
             ref={this.inputRef}
             autoComplete="off"
           />
-          <div className="form__container">
-            <Button
-              className="button--iconed-plus"
-              type="submit"
-              title="Сохранить"
-              disabled={!isValid}
-            />
-          </div>
+
+          <Button
+            className="form__submit button--iconed-plus"
+            type="submit"
+            title="Сохранить"
+            disabled={!isValid}
+          />
         </div>
       </form>
     );
