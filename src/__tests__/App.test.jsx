@@ -10,7 +10,10 @@ const getMapFacadeMocked = () => ({
   renderRoute: jest.fn(),
   renderPoints: jest.fn(),
   getCenter: jest.fn(),
-  getAddress: jest.fn(),
+  getAddress: () =>
+    new Promise(resolve => {
+      setTimeout(() => resolve('address'), 1000);
+    }),
 });
 
 jest.mock('react-beautiful-dnd', () => ({
@@ -66,18 +69,21 @@ const pointsIds = ['test1', 'test2', 'test3', 'test4'];
 describe('renders App', () => {
   it('renders without crashing', () => {
     const div = document.createElement('div');
+
     ReactDOM.render(<App />, div);
     ReactDOM.unmountComponentAtNode(div);
   });
 
   it('renders correctly', () => {
     const wrapper = mount(<App points={points} pointsIds={pointsIds} />);
+
     expect(toJson(wrapper)).toMatchSnapshot();
   });
 });
 
 describe('adds point', () => {
   const wrapper = mount(<App />);
+
   wrapper.setState({ mapLoaded: true });
   wrapper.instance().getMapFacade = getMapFacadeMocked;
 
@@ -121,6 +127,7 @@ describe('adds point', () => {
 
 describe('remove point', () => {
   const wrapper = mount(<App points={points} pointsIds={pointsIds} />);
+
   wrapper.instance().getMapFacade = getMapFacadeMocked;
 
   it('every point item should have button for removing', () => {
@@ -139,5 +146,19 @@ describe('remove point', () => {
     const pointsCountAfterDeletion = wrapper.find('li.points-list__item')
       .length;
     expect(pointsCountBeforeDeletion - pointsCountAfterDeletion).toEqual(1);
+  });
+});
+
+describe('updateAddress', () => {
+  const wrapper = mount(<App points={points} pointsIds={pointsIds} />);
+
+  wrapper.instance().getMapFacade = getMapFacadeMocked;
+
+  it('should update address', async () => {
+    const pointId = 'test2';
+    const coordinates = [];
+
+    await wrapper.instance().updateAddress(pointId, coordinates);
+    expect(wrapper.state('points')[pointId].address).toEqual('address');
   });
 });
