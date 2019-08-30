@@ -1,6 +1,6 @@
 [![Build Status](https://travis-ci.org/frontstall/route-planner.svg?branch=master)](https://travis-ci.org/frontstall/route-planner)
 
-https://routerplanner.herokuapp.com/
+http://simple-route-planner.herokuapp.com/
 
 ## Route planner
 
