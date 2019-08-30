@@ -2,6 +2,7 @@ import React from 'react';
 import uniqueId from 'lodash/uniqueId';
 import pickBy from 'lodash/pickBy';
 import isEqual from 'lodash/isEqual';
+import mapValues from 'lodash/mapValues';
 import { DragDropContext } from 'react-beautiful-dnd';
 
 import Button from './Button';
@@ -169,8 +170,19 @@ class App extends React.Component {
   shouldRenderPoints = prevState => {
     const { points: prevPoints, pointsIds: prevPointsIds } = prevState;
     const { points, pointsIds } = this.state;
+    const pointsCoordinates = mapValues(
+      points,
+      ({ coordinates }) => coordinates,
+    );
+    const prevPointsCoordinates = mapValues(
+      prevPoints,
+      ({ coordinates }) => coordinates,
+    );
 
-    return !isEqual(prevPoints, points) || !isEqual(prevPointsIds, pointsIds);
+    return (
+      !isEqual(prevPointsCoordinates, pointsCoordinates) ||
+      !isEqual(prevPointsIds, pointsIds)
+    );
   };
 
   render() {
