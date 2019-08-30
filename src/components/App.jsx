@@ -25,7 +25,6 @@ class App extends React.Component {
       center: DEFAULT_MAP_CENTER,
       mapLoaded: false,
       map: null,
-      error: false,
     };
   }
 
@@ -45,7 +44,7 @@ class App extends React.Component {
   }
 
   openNewPointForm = () => {
-    this.setState(() => ({ addingNewPoint: true, error: false }));
+    this.setState(() => ({ addingNewPoint: true }));
   };
 
   closeNewPointForm = () => {
@@ -57,7 +56,6 @@ class App extends React.Component {
 
     this.setState(({ points }) => ({
       points: { ...points, [id]: { ...points[id], loading: true } },
-      error: false,
     }));
 
     let address = '';
@@ -66,10 +64,7 @@ class App extends React.Component {
       address = await mapFacade.getAddress(coordinates);
     } catch (error) {
       address = 'Мы не смогли ничего найти :(';
-      this.setState(({ points }) => ({
-        points: { ...points, [id]: { ...points[id], loading: true } },
-        error: true,
-      }));
+
       console.log(error);
     }
 
