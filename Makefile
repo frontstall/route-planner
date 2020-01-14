@@ -9,6 +9,6 @@ build:
 	npm run build
 
 test:
-	npm test
+	npm test -- --coverage --watchAll=false --coverageReporters=text-lcov
 
 .PHONY: test
