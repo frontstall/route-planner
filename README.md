@@ -1,5 +1,9 @@
 [![Build Status](https://travis-ci.org/frontstall/route-planner.svg?branch=master)](https://travis-ci.org/frontstall/route-planner)
 
+[![Maintainability](https://api.codeclimate.com/v1/badges/d801d66703c2f05411be/maintainability)](https://codeclimate.com/github/frontstall/route-planner/maintainability)
+
+[![Test Coverage](https://api.codeclimate.com/v1/badges/d801d66703c2f05411be/test_coverage)](https://codeclimate.com/github/frontstall/route-planner/test_coverage)
+
 http://simple-route-planner.herokuapp.com/
 
 ## Route planner
