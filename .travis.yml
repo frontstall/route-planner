@@ -1,8 +1,5 @@
 ---
-env:
-  global:
-    - CC_TEST_REPORTER_ID=084809094471a853048c250c9917a185f5107750fd73b19bd0fb3d1ff8e38471
-    
+
 before_script:
   - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
   - chmod +x ./cc-test-reporter
